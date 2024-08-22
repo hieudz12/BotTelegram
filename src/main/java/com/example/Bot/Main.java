@@ -39,35 +39,28 @@ public class Main extends TelegramLongPollingBot{
 
                 // Tạo các nút với URL
                 InlineKeyboardButton button1 = new InlineKeyboardButton();
-                button1.setText("Open App 1");
-                button1.setUrl("https://www.youtube.com/");
+                button1.setText("\uD83D\uDED6 Villages are communities of miners. When residents claim HOT, the village treasury receives a 5% cashback for community rewards.\n" +
+                        "\n" +
+                        "\uD83E\uDD1DTo create or join village\n" +
+                        "1. Click \"Create or Join village\"\n" +
+                        "2. If you are the first member, a new village will be founded!\n" +
+                        "\n" +
+                        "\uD83C\uDFF0To recover village ownership\n" +
+                        "1. Add @herewalletbot to your chat\n" +
+                        "2. Confirm village ownership in the bot.");
+                button1.setUrl("https://tingx.io/staking");
 
-                InlineKeyboardButton button2 = new InlineKeyboardButton();
-                button2.setText("Open App 2");
-                button2.setUrl("https://www.youtube.com/");
 
-                InlineKeyboardButton button3 = new InlineKeyboardButton();
-                button3.setText("Open App 3");
-                button3.setUrl("https://www.youtube.com/");
-
-                InlineKeyboardButton button4 = new InlineKeyboardButton();
-                button4.setText("Open App 4");
-                button4.setUrl("https://www.youtube.com/");
 
                 // Tạo hàng 1 với 2 nút
                 List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
                 rowInline1.add(button1);
-                rowInline1.add(button2);
 
-                // Tạo hàng 2 với 2 nút
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
-                rowInline2.add(button3);
-                rowInline2.add(button4);
 
                 // Thêm các hàng vào danh sách hàng
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2);
+                
 
                 // Thêm danh sách hàng vào bàn phím
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
@@ -87,7 +80,6 @@ public class Main extends TelegramLongPollingBot{
 
 
     public static void main(String[] args) {
-    	System.out.println("dsad");
         try {
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
             botsApi.registerBot(new Main());
