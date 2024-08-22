@@ -35,11 +35,7 @@ public class Main extends TelegramLongPollingBot{
             if (messageText.equals("/start")) {
                 SendMessage message = new SendMessage();
                 message.setChatId(String.valueOf(chatId));
-                message.setText("Nhấn vào một trong các nút dưới đây để mở ứng dụng:");
-
-                // Tạo các nút với URL
-                InlineKeyboardButton button1 = new InlineKeyboardButton();
-                button1.setText("\uD83D\uDED6 Villages are communities of miners. When residents claim HOT, the village treasury receives a 5% cashback for community rewards.\n" +
+                message.setText("\uD83D\uDED6 Villages are communities of miners. When residents claim HOT, the village treasury receives a 5% cashback for community rewards.\n" +
                         "\n" +
                         "\uD83E\uDD1DTo create or join village\n" +
                         "1. Click \"Create or Join village\"\n" +
@@ -48,19 +44,24 @@ public class Main extends TelegramLongPollingBot{
                         "\uD83C\uDFF0To recover village ownership\n" +
                         "1. Add @herewalletbot to your chat\n" +
                         "2. Confirm village ownership in the bot.");
-                button1.setUrl("https://tingx.io/staking");
 
+                // Tạo các nút với URL
+                InlineKeyboardButton button1 = new InlineKeyboardButton();
+                button1.setText("login");
+                button1.setUrl("https://tingx.io/staking");
 
 
                 // Tạo hàng 1 với 2 nút
                 List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
                 rowInline1.add(button1);
 
+                // Tạo hàng 2 với 2 nút
+
 
                 // Thêm các hàng vào danh sách hàng
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 rowsInline.add(rowInline1);
-                
+
 
                 // Thêm danh sách hàng vào bàn phím
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
